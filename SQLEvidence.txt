@@ -1,0 +1,47 @@
+(My Project SQL Commands)
+
+create database School;
+
+use School;
+
+create table students( 
+ClassNo varchar(3), 
+RegNo varchar(5), 
+FirstName varchar(20), 
+LastName varchar(20), 
+Gender varchar(15),
+DateOfBirth varchar(15), 
+Address varchar(35),  
+Age int(3), 
+Phone int(11),
+Email varchar(25));
+
+desc students;
+
+(My_Evidence SQL Commands)------------------------------
+
+create database inventory;
+use inventory;
+
+create table Product(ProductId int(5) primary key, ProductName varchar(25), Stock int(10), Price double);
+desc Product;
+
+insert into Product values(1001, 'Fresh Salt', 50, 30);
+insert into Product values(1002, 'CloseUp', 50, 80);
+insert into Product values(1003, 'Lux Soap', 50, 45);
+insert into Product values(1004, 'Meril Soap', 50, 35);
+insert into Product values(1005, 'Dove Shampoo', 15, 250);
+
+create table Customer(CustomerId int(5) primary key, CustomerName varchar(35), Address varchar(50));
+desc Customer;
+
+insert into Customer values(101, 'Md. Mahdee Hasan', 'Mirpur_12 Dhaka');
+insert into Customer values(102, 'Ferdous Mahmud', 'Mirpur, Kushtia');
+insert into Customer values(103, 'Md. Liton Munshi', 'Gopalganj');
+insert into Customer values(104, 'Md. Pikul Hasan', 'Savar, Dhaka');
+insert into Customer values(105, 'Md. Kanon Biswas', 'Dhanmondi, Dhaka');
+
+create table sales(SalesNo int(10) primary key, CustomerId int(5), ProductId int(5), Quantity int(7), 
+Price double, FOREIGN KEY (ProductId) REFERENCES Product(ProductId),FOREIGN KEY (CustomerId) REFERENCES Customer(CustomerId));
+
+
